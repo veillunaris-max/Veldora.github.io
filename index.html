@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Server Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>HostDash</h2>
+        <ul>
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="#">Servers</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <header>
+            <h1>Server Management</h1>
+            <div class="server-status-badge online">System Online</div>
+        </header>
+        
+        <div class="stats-grid">
+            <div class="card">
+                <h3>RAM Usage</h3>
+                <div class="metric"><span id="ram-used">4.2</span> / 15 GB</div>
+                <div class="progress-bar"><div class="progress" style="width: 28%"></div></div>
+            </div>
+            <div class="card">
+                <h3>CPU Load</h3>
+                <div class="metric"><span id="cpu-used">12</span>%</div>
+                <div class="progress-bar"><div class="progress" style="width: 12%"></div></div>
+            </div>
+            <div class="card">
+                <h3>Disk Storage</h3>
+                <div class="metric">45 / 120 GB</div>
+                <div class="progress-bar"><div class="progress" style="width: 37%"></div></div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Resource History (15GB Node)</h3>
+            <canvas id="resourceChart"></canvas>
+        </div>
+
+        <div class="controls-section">
+            <h3>Quick Actions</h3>
+            <button class="btn btn-restart" onclick="triggerAction('Restart')">Restart Server</button>
+            <button class="btn btn-stop" onclick="triggerAction('Stop')">Stop Server</button>
+            <button class="btn btn-terminal" onclick="triggerAction('Terminal')">Open Terminal</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
